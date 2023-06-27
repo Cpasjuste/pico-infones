@@ -1053,8 +1053,12 @@ void InfoNES_pAPUVsync()
         /* ramp down */
         ApuC1Freq += (ApuC1Freq >> ApuC1SweepShifts);
       }
-
-      ApuC1Skip = ApuPulseMagic / (ApuC1Freq / 2);
+      // prevent SIGFPE crash (Arithmetic exception)
+      if(ApuC1Freq > 1) {
+          ApuC1Skip = ApuPulseMagic / (ApuC1Freq / 2);
+      } else {
+          ApuC1Skip = ApuPulseMagic / 2;
+      }
     }
   }
 
