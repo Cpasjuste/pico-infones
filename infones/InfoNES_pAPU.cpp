@@ -553,7 +553,7 @@ void __not_in_flash_func(ApuRenderingWave1)(int n)
   }
   else
   {
-    memset(wave_buffers[0], 0, 2 * n);
+    memset(wave_buffers[0], 0x80, 2 * n);
   }
 }
 
@@ -654,7 +654,7 @@ void __not_in_flash_func(ApuRenderingWave2)(int n)
   }
   else
   {
-    memset(wave_buffers[1], 0, 2 * n);
+    memset(wave_buffers[1], 0x80, 2 * n);
   }
 }
 
@@ -747,7 +747,7 @@ void __not_in_flash_func(ApuRenderingWave3)(int n)
   }
   else
   {
-    memset(wave_buffers[2], 0, 2 * n);
+    memset(wave_buffers[2], 0x80, 2 * n);
   }
 }
 
@@ -875,7 +875,7 @@ void __not_in_flash_func(ApuRenderingWave4)(int n)
   }
   else
   {
-    memset(wave_buffers[3], 0, n << 1);
+    memset(wave_buffers[3], 0x80, n << 1);
   }
 }
 
@@ -1002,7 +1002,7 @@ void __not_in_flash_func(ApuRenderingWave5)(int n)
   }
   else
   {
-    memset(wave_buffers[4], 0, n << 1);
+    memset(wave_buffers[4], 0x80, n << 1);
   }
 }
 
